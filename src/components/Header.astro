@@ -1,91 +1,57 @@
-<header class="navbar">
-  <div class="container">
-    <div class="logo">
-      <img src="/assets/svg/Logo.svg" alt="MetaBlog Logo" />
-    </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Section</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fff;
+        color: #1f1f1f;
+      }
 
-    <nav class="menu">
-      <a href="/">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/blog/first">Single Post</a>
-      <a href="#">Pages</a>
-      <a href="#">Contact</a>
-    </nav>
+      /* ===== HEADER ===== */
+      header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px 40px;
+      }
 
-    <div class="search">
-      <input type="text" placeholder="Search" />
-      <button class="search-btn">
-        <svg
-          width="16"
-          height="16"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-    </div>
-  </div>
-</header>
+      .nav {
+        display: flex;
+        gap: 30px;
+      }
 
-<style>
-  .navbar {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-  }
+      .nav a {
+        text-decoration: none;
+        color: #111;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
 
-  .navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 20px;
-  }
+      .nav a:hover {
+        color: #ff5a5f;
+      }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    font-size: 18px;
-  }
-
-  .menu {
-    display: flex;
-    gap: 20px;
-  }
-
-  .menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-  }
-
-  .menu a:hover {
-    color: #2563eb;
-  }
-
-  .search {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 4px 8px;
-    border-radius: 20px;
-  }
-
-  .search input {
-    border: none;
-    outline: none;
-    padding: 4px 6px;
-  }
-
-  .search-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
-</style>
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        header {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="nav">
+        <a href="#works">Works</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  </body>
+</html>

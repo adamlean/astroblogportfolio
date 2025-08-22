@@ -2,7 +2,7 @@
 
 ![Blog](screenshot.png)
 
-- [Design](https://www.figma.com/design/klkVt3lLw2KHX5IOH8QEbt/Free-Blog-Template--%7C-Modern---Creative-design--Community-?node-id=2101-19307&t=ziQ63rRZBxuVZ2I0-1)
+- [Design](https://www.figma.com/design/R7HfhELcmUbG4Ykx28Siww/%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE-%D0%B2%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%D0%B0?node-id=0-1&t=JoqupXJLs8is2uHN-1)
 - [Demo](https://dolinahotel-web.netlify.app/)
 
 ```sh
