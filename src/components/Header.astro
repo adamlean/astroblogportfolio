@@ -1,0 +1,91 @@
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="/assets/svg/Logo.svg" alt="MetaBlog Logo" />
+    </div>
+
+    <nav class="menu">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/blog/first">Single Post</a>
+      <a href="#">Pages</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="search">
+      <input type="text" placeholder="Search" />
+      <button class="search-btn">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .menu a:hover {
+    color: #2563eb;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 20px;
+  }
+
+  .search input {
+    border: none;
+    outline: none;
+    padding: 4px 6px;
+  }
+
+  .search-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+</style>
