@@ -2,7 +2,6 @@
 title: "First step by Astro"
 pubDate: 2022-08-20
 description: "Astro started"
-image: "/assets/img/image-1.png"
 category: "Technology"
 tags: ["AI", "Workplace", "Innovation"]
 ---
