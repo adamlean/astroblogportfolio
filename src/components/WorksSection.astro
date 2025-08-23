@@ -10,33 +10,27 @@ interface Props {
 const { works } = Astro.props;
 ---
 
-<section class="container mx-auto px-4 my-12">
-  <h2 class="text-2xl font-bold mb-6">Work</h2>
+<section class="work-section">
+  <h2 class="work-title">Work</h2>
 
-  <div>
+  <div class="work-list">
     {
       works
         .sort((a, b) => b.data.year - a.data.year)
         .map((work) => {
           const { title, description, image, year, category } = work.data;
           return (
-            <article class="flex gap-4 py-6 border-b">
-              <div class="flex-shrink-0 w-40 h-28 overflow-hidden rounded-lg">
-                <img
-                  src={image}
-                  alt={title}
-                  class="w-full h-full object-cover"
-                />
+            <article class="work-item">
+              <div class="work-image">
+                <img src={image} alt={title} />
               </div>
-              <div class="flex flex-col justify-center">
-                <h3 class="text-xl font-bold">{title}</h3>
-                <div class="flex items-center gap-2 text-sm text-gray-600">
-                  <span class="px-2 py-0.5 bg-blue-900 text-white rounded-full">
-                    {year}
-                  </span>
-                  <span>{category}</span>
+              <div class="work-content">
+                <h3 class="work-heading">{title}</h3>
+                <div class="work-meta">
+                  <span class="work-year">{year}</span>
+                  <span class="work-category">{category}</span>
                 </div>
-                <p class="mt-2 text-gray-700">{description}</p>
+                <p class="work-description">{description}</p>
               </div>
             </article>
           );
@@ -44,3 +38,83 @@ const { works } = Astro.props;
     }
   </div>
 </section>
+
+<style>
+  .work-section {
+    max-width: 960px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  .work-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .work-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .work-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .work-image {
+    flex-shrink: 0;
+    width: 160px;
+    height: 112px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .work-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .work-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+
+  .work-year {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+  }
+
+  .work-category {
+    font-size: 0.875rem;
+  }
+
+  .work-description {
+    margin-top: 0.5rem;
+    color: #444;
+    line-height: 1.4;
+  }
+</style>
