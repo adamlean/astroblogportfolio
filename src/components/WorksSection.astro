@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 type Work = CollectionEntry<"works">;
 
@@ -7,11 +7,11 @@ interface Props {
   works: Work[];
 }
 
-const { works } = Astro.props;
+const { works } = Astro.props as Props;
 ---
 
 <section class="work-section">
-  <h2 class="work-title">Work</h2>
+  <h2 class="work-title">Works</h2>
 
   <div class="work-list">
     {
@@ -25,7 +25,9 @@ const { works } = Astro.props;
                 <img src={image} alt={title} />
               </div>
               <div class="work-content">
-                <h3 class="work-heading">{title}</h3>
+                <h3 class="work-heading">
+                  <a href={`/works/${work.slug}`}>{title}</a>
+                </h3>
                 <div class="work-meta">
                   <span class="work-year">{year}</span>
                   <span class="work-category">{category}</span>

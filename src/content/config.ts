@@ -16,12 +16,12 @@ const portfolioCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     image: z.string(),
-    year: z.number(),            
-    category: z.string(),        
+    year: z.number(),
+    category: z.string(),
   }),
 });
 
 export const collections = {
   blog: blogCollection,
-  portfolio: portfolioCollection,
+  works: portfolioCollection, 
 };

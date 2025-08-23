@@ -4,18 +4,17 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-// получаем slug из роута
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
+  const works = await getCollection("works");
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
   }));
 }
 
-const { post } = Astro.props;
+const { work } = Astro.props;
 
-const { Content } = await post.render();
+const { Content } = await work.render();
 ---
 
 <Layout>
@@ -23,38 +22,28 @@ const { Content } = await post.render();
   <article class="blog-post">
     <div class="container">
       {
-        post.data.image && (
-          <img src={post.data.image} alt={post.data.title} class="post-image" />
+        work.data.image && (
+          <img src={work.data.image} alt={work.data.title} class="post-image" />
         )
       }
 
-      <h1>{post.data.title}</h1>
+      <h1>{work.data.title}</h1>
       <p class="post-meta">
         {
-          post.data.pubDate
-            ? post.data.pubDate.toLocaleDateString("en-US", {
+          work.data.pubDate
+            ? work.data.pubDate.toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })
             : ""
         }
-        {post.data.category && ` | ${post.data.category}`}
+        {work.data.category && ` | ${work.data.category}`}
       </p>
 
       {
-        post.data.tags && (
-          <div class="post-tags">
-            {post.data.tags.map((tag) => (
-              <span class="post-tag">{tag}</span>
-            ))}
-          </div>
-        )
-      }
-
-      {
-        post.data.description && (
-          <p class="description">{post.data.description}</p>
+        work.data.description && (
+          <p class="description">{work.data.description}</p>
         )
       }
 
