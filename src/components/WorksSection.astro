@@ -16,7 +16,7 @@ const { works } = Astro.props;
   <div>
     {
       works
-        .sort((a, b) => b.data.year - a.data.year) // новые работы первыми
+        .sort((a, b) => b.data.year - a.data.year)
         .map((work) => {
           const { title, description, image, year, category } = work.data;
           return (
