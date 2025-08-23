@@ -52,11 +52,6 @@ const { works } = Astro.props as Props;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    text-decoration: none;
-  }
-
-  .work-title:hover {
-    color: blue;
   }
 
   .work-list {
@@ -96,6 +91,15 @@ const { works } = Astro.props as Props;
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
+  }
+
+  .work-heading a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .work-heading a:hover {
+    color: blue;
   }
 
   .work-meta {
