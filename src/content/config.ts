@@ -6,11 +6,22 @@ const blogCollection = defineCollection({
     description: z.string().optional(),
     image: z.string().optional(),
     category: z.string().optional(),
-    pubDate: z.date(), 
+    pubDate: z.date(),
     tags: z.array(z.string()).optional(),
+  }),
+});
+
+const portfolioCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string(),
+    year: z.number(),            
+    category: z.string(),        
   }),
 });
 
 export const collections = {
   blog: blogCollection,
+  portfolio: portfolioCollection,
 };
