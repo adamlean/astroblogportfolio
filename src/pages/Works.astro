@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
-import WorkSection from "../components/WorksSection.astro";
+import WorksSection from "../components/WorksSection.astro";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
@@ -11,12 +11,6 @@ works.sort((a, b) => b.data.year - a.data.year);
 
 <Layout>
   <Header />
-  <div class="container">
-    <h1 class="text-3xl font-bold mb-8">Work</h1>
-
-    <div>
-      {works.map((work) => <WorkSection entry={work} />)}
-    </div>
-  </div>
+  <WorksSection works={works} />
   <Footer />
 </Layout>
