@@ -11,7 +11,7 @@ const { entry } = Astro.props;
 const { title, description, image, year, category } = entry.data;
 ---
 
-<article class="flex gap-4 py-6 border-b">
+<article class="container flex gap-4 py-6 border-b">
   <div class="flex-shrink-0 w-40 h-28 overflow-hidden rounded-lg">
     <img src={image} alt={title} class="w-full h-full object-cover" />
   </div>
