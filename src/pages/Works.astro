@@ -11,10 +11,12 @@ works.sort((a, b) => b.data.year - a.data.year);
 
 <Layout>
   <Header />
-  <h1 class="text-3xl font-bold mb-8">Work</h1>
+  <div class="container">
+    <h1 class="text-3xl font-bold mb-8">Work</h1>
 
-  <div>
-    {works.map((work) => <WorkSection entry={work} />)}
+    <div>
+      {works.map((work) => <WorkSection entry={work} />)}
+    </div>
   </div>
   <Footer />
 </Layout>
