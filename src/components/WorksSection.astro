@@ -129,4 +129,22 @@ const { works } = Astro.props as Props;
     line-height: 1.4;
     font-size: 1rem;
   }
+
+  /* === Responsive === */
+
+  @media (max-width: 768px); {
+    .work-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-heading {
+      font-size: 1rem;
+    }
+
+    .work-image {
+      max-width: 340px:
+      height: auto;
+    }
+  }
 </style>
