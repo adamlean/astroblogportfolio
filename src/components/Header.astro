@@ -1,13 +1,50 @@
 <!-- HEADER -->
 <header>
   <div class="container">
-    <nav class="nav">
+    <button class="burger" id="openMenu" aria-label="Open Menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <button class="close" id="closeMenu" aria-label="Close Menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <nav class="nav" id="menu">
       <a href="/">Home</a>
       <a href="/works">Works</a>
       <a href="/blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
+
+  <div class="overlay" id="overlay"></div>
 </header>
 
 <style>
@@ -43,10 +80,51 @@
     color: blue;
   }
 
+  /* ===== BURGER ===== */
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .burger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     header {
       justify-content: center;
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    /* ==== NAV ==== */
+    .nav {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      height: 100%;
+      width: 250px;
+      background: #444;
+      flex-direction: column;
+      padding: 60px 20px;
+      transition: right 0.3s ease;
+    }
+
+    .nav a {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    .nav.active {
+      right: 0;
     }
   }
 </style>
