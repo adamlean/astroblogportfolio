@@ -110,12 +110,7 @@
     }
 
     .close {
-      display: flex;
-    }
-
-    .burger,
-    .close {
-      justify-content: right;
+      display: none;
     }
 
     /* ==== NAV ==== */
@@ -139,6 +134,14 @@
 
     .nav.active {
       right: 0;
+    }
+
+    .nav.active ~ .close {
+      display: flex;
+    }
+
+    .nav.active ~ .burger {
+      display: none;
     }
   }
 </style>
